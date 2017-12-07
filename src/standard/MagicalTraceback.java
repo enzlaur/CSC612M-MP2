@@ -6,7 +6,8 @@ public class MagicalTraceback
 {
     private String stringA;
     private String stringB;
-
+    private String localA = "";
+    private String localB = "";
     private int[][] matrix;
     private int highX;
     private int highY;
@@ -67,6 +68,8 @@ public class MagicalTraceback
             if( stringA.charAt(i-1) == stringB.charAt(j-1) )
             {
                 alignments = stringA.charAt(i-1) + "" + alignments;
+                localA = stringA.charAt(i-1) + "" + localA;
+                localB = stringB.charAt(j-1) + "" + localB;
             }
 
             up  = matrix[i-1][j];
@@ -86,13 +89,16 @@ public class MagicalTraceback
             {
                 newI = i - 1;
                 newJ = j;
-
+                localB = "-" + localB;
+                localA = stringA.charAt(i-1)+ "" + localA;
             }
             //* goes left *//*
             if( currHigh == 1)
             {
                 newI = i;
                 newJ = j - 1;
+                localA = "-" + localA;
+                localB = stringB.charAt(j-1) + "" + localB;
             }
             //* goes diagonally *//*
             if( currHigh == 2)
@@ -106,7 +112,9 @@ public class MagicalTraceback
 
         }
 
-        println("alignment: " + alignments);
+        println("LCS: " + alignments);
+        println("localA: " + localA);
+        println("localB: " + localB);
         return alignments;
     }
 
