@@ -6,9 +6,9 @@ public class StandardMatrixFiller {
     private int matchScore;
     private int mismatchScore;
     private int gapPenalty;
-    private int highestValue;
-    private int highX;
-    private int highY;
+    private int highestValue = 0;
+    private int highX = 0;
+    private int highY = 0;
 
     public StandardMatrixFiller() {
         this.matchScore = 3;
