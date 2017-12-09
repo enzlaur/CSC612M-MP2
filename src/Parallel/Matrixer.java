@@ -10,8 +10,8 @@ public class Matrixer
         int[][] resultingMatrix;
         /* Create the initial size of the matrix (note plus one due to 0 col row) */
         resultingMatrix = new int[ stringA.length() + 1 ][ stringB.length() + 1 ];
-        Cell cell = new Cell(1,1,resultingMatrix, stringA, stringB);
-        cell.computeCellScore();
+//        Cell cell = new Cell(1,1,resultingMatrix, stringA, stringB);
+//        cell.computeCellScore();
         /* set starting for now as 1,1 */
         return resultingMatrix;
     }
@@ -22,7 +22,7 @@ public class Matrixer
         {
             Matrixer matrixer = new Matrixer();
             String stringA = "GGTTGACTA";
-            String stringB = "GGTTACGG";
+            String stringB = "TGTTACGG";
             int[][] matrix;
             matrix = matrixer.buildInitialMatrix(stringA, stringB);
             printMatrix(matrix);
@@ -30,6 +30,11 @@ public class Matrixer
 //            Cell cell = new Cell(1,1, matrix, stringA, stringB);
 //            cell.placeRandIntoCell();
 //            printMatrix(matrix);
+            Traverser t1 = new Traverser("right", matrix, 1,1,stringA,stringB,'r');
+            Traverser t2 = new Traverser("down", matrix, 1,2, stringA, stringB, 'd');
+            t1.start();
+            t2.start();
+
         }
     }
 }

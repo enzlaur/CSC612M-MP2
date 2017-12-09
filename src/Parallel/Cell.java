@@ -43,7 +43,6 @@ public class Cell
         if( stringA.charAt(x - 1) == stringB.charAt(y - 1) )
         {
             score = matrix[x-1][y-1] + matchScore;
-            println("matched");
         }
         /* otherwise */
         else
