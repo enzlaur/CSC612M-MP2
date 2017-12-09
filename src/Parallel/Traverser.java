@@ -32,6 +32,7 @@ public class Traverser extends Thread
         Cell cell;
         try
         {
+            long startTime = System.currentTimeMillis();
             if( direction == 'd' )
             {
                 while( x <= stringA.length() )
@@ -41,9 +42,9 @@ public class Traverser extends Thread
                         cell = new Cell(x, i, originalMatrix, stringA, stringB);
                         int temp = cell.computeCellScore();
 
-                        println("ix " + i + " " + x + " " + temp);
-                        printMatrix(originalMatrix);
-                        println("");
+//                        println("ix " + i + " " + x + " " + temp);
+//                        printMatrix(originalMatrix);
+//                        println("");
                     }
                     x++;
                     iOff++;
@@ -59,15 +60,18 @@ public class Traverser extends Thread
                         cell = new Cell(i, y, originalMatrix, stringA, stringB);
                         cell.computeCellScore();
                         int temp = cell.computeCellScore();
-                        println("iy " + i + " " + y + " " + temp);
-                        printMatrix(originalMatrix);
-                        println("");
+//                        println("iy " + i + " " + y + " " + temp);
+//                        printMatrix(originalMatrix);
+//                        println("");
                     }
                     y++;
                     iOff++;
                 }
-                println("last y = " + y + "| last iOff = " + iOff);
+//                println("last y = " + y + "| last iOff = " + iOff);
             }
+            long endTime   = System.currentTimeMillis();
+            long totalTime = endTime - startTime;
+            System.out.println("Time: " + totalTime);
             println("FINAL: " + x + "-" + y);
             printMatrix(originalMatrix);
             println("");

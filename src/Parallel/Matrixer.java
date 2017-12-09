@@ -16,6 +16,21 @@ public class Matrixer
         return resultingMatrix;
     }
 
+    public void runMe(String stringA, String stringB)
+    {
+        int[][] matrix;
+        matrix = buildInitialMatrix(stringA, stringB);
+        printMatrix(matrix);
+        println("");
+//            Cell cell = new Cell(1,1, matrix, stringA, stringB);
+//            cell.placeRandIntoCell();
+//            printMatrix(matrix);
+        Traverser t1 = new Traverser("right", matrix, 1,1,stringA,stringB,'r');
+        Traverser t2 = new Traverser("down", matrix, 1,2, stringA, stringB, 'd');
+        t1.start();
+        t2.start();
+    }
+
     private static class testMe
     {
         public static void main(String[] args)

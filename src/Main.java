@@ -1,3 +1,4 @@
+import Parallel.Matrixer;
 import Utility.IOMaster;
 import standard.MagicalTraceback;
 import standard.StandardMatrixFiller;
@@ -9,10 +10,34 @@ import static Utility.Print.printMatrix;
 public class Main {
 
 
+    public static int[][] runSingle(String stringA, String stringB)
+    {
+        StandardMatrixFiller standardMatrixFiller = new StandardMatrixFiller();
+        /*
+         * Single version
+         * */
+        /* Populate matrix */
+        long startTime = System.currentTimeMillis(); /* time thingy */
+        int[][] matrix = standardMatrixFiller.fillMatrix(stringA, stringB);
+        /* timer thingy */
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println("Time: " + totalTime);
+        printMatrix(matrix);
+        return matrix;
+    }
+
+    public static void runParallel(String stringA, String stringB)
+    {
+        /* parallel version */
+        Matrixer matrixer = new Matrixer();
+        matrixer.runMe(stringA, stringB);
+    }
+
 
     public static void main(String[] args)
     {
-        StandardMatrixFiller standardMatrixFiller = new StandardMatrixFiller();
+
         MagicalTraceback magicalTraceback;
         IOMaster ioMaster = new IOMaster();
         String[] sequences = new String[2];
@@ -29,14 +54,18 @@ public class Main {
         /* Copy to stringA and stringB */
         stringA = sequences[0];
         stringB = sequences[1];
-        /* Populate matrix */
-        matrix = standardMatrixFiller.fillMatrix(stringA, stringB);
-        /* Perform traceback */
-        magicalTraceback = new MagicalTraceback(matrix, standardMatrixFiller.getHighX(), standardMatrixFiller.getHighY());
+
+//        runSingle(stringA, stringB);
+        runParallel(stringA, stringB);
+
+        /*
+        * Perform Traceback below
+        * */
+//        magicalTraceback = new MagicalTraceback(matrix, standardMatrixFiller.getHighX(), standardMatrixFiller.getHighY());
         /* Print matrix table */
-        printMatrix(matrix);
+//        printMatrix(matrix);
         /* Find the best local alignment */
-        magicalTraceback.generateAlignments(stringA, stringB);
+//        magicalTraceback.generateAlignments(stringA, stringB);
     }
 
 
