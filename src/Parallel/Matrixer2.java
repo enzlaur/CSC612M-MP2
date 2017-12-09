@@ -20,8 +20,8 @@ public class Matrixer2
         MatrixStorage matrixStorage = new MatrixStorage(stringA, stringB);
         Cell2 c1 = new Cell2(matrixStorage, 1,0, matrixStorage.getStringALen(),matrixStorage.getStringBLen());
         Cell2 c2 = new Cell2(matrixStorage, 0, 2, matrixStorage.getStringALen(), matrixStorage.getStringBLen());
-        c1.start(); /* upright triangle*/
-        c2.start(); /* downward triangle*/
+        c2.start(); /* upright triangle*/
+        c1.start(); /* downward triangle*/
         this.ms = matrixStorage;
 //        printMatrix( matrixStorage.getMatrix() );
     }

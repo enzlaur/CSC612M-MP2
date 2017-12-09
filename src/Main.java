@@ -102,8 +102,14 @@ public class Main {
         /*
         * CHOOSE ONE ONLY
         * */
-        runSingle(stringA, stringB);
-//        runParallel2(stringA, stringB);
+//        runSingle(stringA, stringB);
+//        runSingle(stringA, stringB);
+//        runSingle(stringA, stringB);
+//        runSingle(stringA, stringB);
+        runParallel2(stringA, stringB);
+        runParallel2(stringA, stringB);
+        runParallel2(stringA, stringB);
+        runParallel2(stringA, stringB);
 
         /*
         * Perform Traceback below
