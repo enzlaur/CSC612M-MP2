@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.util.Arrays;
 
 import static Utility.Print.println;
 import static Utility.Print.print;
@@ -16,6 +17,10 @@ public class IOMaster
 
     public IOMaster() {
         System.out.println("Launching IOMaster to read/write files");
+    }
+
+    public IOMaster(String fileName) {
+        this.fileName = fileName;
     }
 
     public String[] readFileToStringArray() throws Exception
@@ -72,7 +77,7 @@ public class IOMaster
     public void writeNumListToFile(int[] numlist) throws Exception
     {
         String completeFileName = fileAddress + "/" + fileName;
-        PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+        PrintWriter writer = new PrintWriter("resultMatrix.txt", "UTF-8");
 //		// Write the result to file
 //		writer.println(toPrint);
         for(int n: numlist)
@@ -80,6 +85,14 @@ public class IOMaster
             writer.println(n);
         }
         // Close the printer
+        writer.close();
+    }
+
+    public void writeStringToFile(int[][] matrix) throws Exception
+    {
+        PrintWriter writer = new PrintWriter("resultMatrix.txt", "UTF-8");
+        String finals = Arrays.deepToString(matrix).replace("], ", "]\n").replace("[[", "[").replace("]]", "]");
+        writer.println(finals);
         writer.close();
     }
 

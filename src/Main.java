@@ -23,17 +23,42 @@ public class Main {
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
         System.out.println("Time: " + totalTime);
-        printMatrix(matrix);
+//        printMatrix(matrix);
+        try {
+            printToFile(matrix);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return matrix;
     }
 
     public static void runParallel(String stringA, String stringB)
     {
+        long startTime = System.currentTimeMillis();
         /* parallel version */
         Matrixer matrixer = new Matrixer();
         matrixer.runMe(stringA, stringB);
+        int[][] matrix = matrixer.getResultMatrix();
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println("Time: " + totalTime);
+        /*try {
+            printToFile(matrix);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
     }
 
+    public static void printToFile(int[][] matrix) throws Exception
+    {
+        IOMaster ioMaster = new IOMaster();
+        try {
+            ioMaster.writeStringToFile(matrix);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args)
     {
@@ -48,15 +73,19 @@ public class Main {
         try
         {
             sequences = ioMaster.readFileToStringArray();
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
         }
         /* Copy to stringA and stringB */
         stringA = sequences[0];
         stringB = sequences[1];
-
-        runSingle(stringA, stringB);
-//        runParallel(stringA, stringB);
+        /*
+        * CHOOSE ONE ONLY
+        * */
+//        runSingle(stringA, stringB);
+        runParallel(stringA, stringB);
 
         /*
         * Perform Traceback below

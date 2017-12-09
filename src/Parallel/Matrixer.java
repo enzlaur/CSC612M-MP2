@@ -5,6 +5,8 @@ import static Utility.Print.*;
 public class Matrixer
 {
 
+    int[][] resultMatrix;
+
     public int[][] buildInitialMatrix(String stringA, String stringB)
     {
         int[][] resultingMatrix;
@@ -20,15 +22,21 @@ public class Matrixer
     {
         int[][] matrix;
         matrix = buildInitialMatrix(stringA, stringB);
-        printMatrix(matrix);
+//        printMatrix(matrix);
         println("");
 //            Cell cell = new Cell(1,1, matrix, stringA, stringB);
 //            cell.placeRandIntoCell();
 //            printMatrix(matrix);
         Traverser t1 = new Traverser("right", matrix, 1,1,stringA,stringB,'r');
         Traverser t2 = new Traverser("down", matrix, 1,2, stringA, stringB, 'd');
-        t1.start();
         t2.start();
+        t1.start();
+
+//        resultMatrix = t2.getOriginalMatrix();
+    }
+
+    public int[][] getResultMatrix() {
+        return resultMatrix;
     }
 
     private static class testMe
@@ -42,9 +50,6 @@ public class Matrixer
             matrix = matrixer.buildInitialMatrix(stringA, stringB);
             printMatrix(matrix);
             println("");
-//            Cell cell = new Cell(1,1, matrix, stringA, stringB);
-//            cell.placeRandIntoCell();
-//            printMatrix(matrix);
             Traverser t1 = new Traverser("right", matrix, 1,1,stringA,stringB,'r');
             Traverser t2 = new Traverser("down", matrix, 1,2, stringA, stringB, 'd');
             t1.start();
