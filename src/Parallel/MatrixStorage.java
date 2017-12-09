@@ -10,6 +10,7 @@ public class MatrixStorage
     private int[][] matrix;
     private String stringA, stringB;
     private int stringALen, stringBLen;
+    private int finishedThreads = 0;
 
     public MatrixStorage(String stringA, String stringB)
     {
@@ -21,7 +22,7 @@ public class MatrixStorage
     public void updateMatrixTableCellValue(int x, int y, int value)
     {
         this.matrix[x][y] = value;
-        printMatrix( matrix );
+
     }
 
     public int getMatrixTableCellValue(int x, int y)
@@ -53,5 +54,14 @@ public class MatrixStorage
 
     public int[][] getMatrix() {
         return matrix;
+    }
+
+    public void incrementFinishedThreads()
+    {
+        this.finishedThreads++;
+    }
+
+    public int getFinishedThreads() {
+        return finishedThreads;
     }
 }

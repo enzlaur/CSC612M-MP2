@@ -1,4 +1,5 @@
 import Parallel.Matrixer;
+import Parallel.Matrixer2;
 import Utility.IOMaster;
 import standard.MagicalTraceback;
 import standard.StandardMatrixFiller;
@@ -25,12 +26,27 @@ public class Main {
         System.out.println("Time: " + totalTime);
 //        printMatrix(matrix);
         try {
-            printToFile(matrix);
+            printToFile("single.txt", matrix);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         return matrix;
+    }
+
+    public static void runParallel2(String stringA, String stringB)
+    {
+        Matrixer2 m2 = new Matrixer2(stringA, stringB);
+        m2.runMatrixer2();
+        try
+        {
+            printToFile("parallel2.txt", m2.getMs().getMatrix());
+        }
+        catch ( Exception e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     public static void runParallel(String stringA, String stringB)
@@ -50,9 +66,11 @@ public class Main {
         }*/
     }
 
-    public static void printToFile(int[][] matrix) throws Exception
+
+
+    public static void printToFile(String fileName, int[][] matrix) throws Exception
     {
-        IOMaster ioMaster = new IOMaster();
+        IOMaster ioMaster = new IOMaster(fileName);
         try {
             ioMaster.writeStringToFile(matrix);
         } catch (Exception e) {
@@ -84,8 +102,8 @@ public class Main {
         /*
         * CHOOSE ONE ONLY
         * */
-//        runSingle(stringA, stringB);
-        runParallel(stringA, stringB);
+        runSingle(stringA, stringB);
+//        runParallel2(stringA, stringB);
 
         /*
         * Perform Traceback below

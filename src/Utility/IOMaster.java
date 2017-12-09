@@ -77,7 +77,7 @@ public class IOMaster
     public void writeNumListToFile(int[] numlist) throws Exception
     {
         String completeFileName = fileAddress + "/" + fileName;
-        PrintWriter writer = new PrintWriter("resultMatrix.txt", "UTF-8");
+        PrintWriter writer = new PrintWriter(this.fileName, "UTF-8");
 //		// Write the result to file
 //		writer.println(toPrint);
         for(int n: numlist)
@@ -90,7 +90,7 @@ public class IOMaster
 
     public void writeStringToFile(int[][] matrix) throws Exception
     {
-        PrintWriter writer = new PrintWriter("resultMatrix.txt", "UTF-8");
+        PrintWriter writer = new PrintWriter(this.fileName, "UTF-8");
         String finals = Arrays.deepToString(matrix).replace("], ", "]\n").replace("[[", "[").replace("]]", "]");
         writer.println(finals);
         writer.close();
