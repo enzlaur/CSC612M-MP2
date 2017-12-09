@@ -55,8 +55,8 @@ public class Main {
         stringA = sequences[0];
         stringB = sequences[1];
 
-//        runSingle(stringA, stringB);
-        runParallel(stringA, stringB);
+        runSingle(stringA, stringB);
+//        runParallel(stringA, stringB);
 
         /*
         * Perform Traceback below
