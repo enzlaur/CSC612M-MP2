@@ -45,14 +45,14 @@ public class Main {
     {
         Matrixer2 m2 = new Matrixer2(stringA, stringB);
         m2.runMatrixer2();
-        try
-        {
-            printToFile("parallel2.txt", m2.getMs().getMatrix());
-        }
-        catch ( Exception e)
-        {
-            e.printStackTrace();
-        }
+//        try
+//        {
+//            printToFile("parallel2.txt", m2.getMs().getMatrix());
+//        }
+//        catch ( Exception e)
+//        {
+//            e.printStackTrace();
+//        }
 
     }
 

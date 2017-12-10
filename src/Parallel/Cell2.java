@@ -1,5 +1,7 @@
 package Parallel;
 
+import Utility.IOMaster;
+
 import static Utility.Print.*;
 
 public class Cell2 extends Thread
@@ -182,6 +184,16 @@ public class Cell2 extends Thread
 //        println("increment by the cell: " + ms.getFinishedThreads());
     }
 
+
+    public static void printToFile(String fileName, int[][] matrix) throws Exception
+    {
+        IOMaster ioMaster = new IOMaster(fileName);
+        try {
+            ioMaster.writeStringToFile(matrix);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public void run()
     {
         long startTime = System.currentTimeMillis();
@@ -223,9 +235,20 @@ public class Cell2 extends Thread
             System.out.println("Time: " + totalTime);
             println("Finished all " + ms.getFinishedThreads() + " thread(s) ");
             printMatrix( ms.getMatrix() );
+            try
+            {
+
+                printToFile("parallel2.txt", ms.getMatrix());
+            }
+            catch ( Exception e)
+            {
+                e.printStackTrace();
+            }
         }
     }
 }
+
+
 
     /*
     public void run()
