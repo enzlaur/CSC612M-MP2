@@ -233,19 +233,19 @@ public class Cell2 extends Thread
         {
             long endTime   = System.currentTimeMillis();
             long totalTime = endTime - startTime;
-            System.out.println("Time: " + totalTime);
+            System.out.println("ParallelRun: Time: " + totalTime);
             println("Finished all " + ms.getFinishedThreads() + " thread(s) ");
 //            printMatrix( ms.getMatrix() );
-            int[][] testMe = runSingle(ms.getStringA(), ms.getStringB());
-            isMatrixSame(testMe, ms.getMatrix());
-            try
-            {
-                printToFile("parallel2.txt", ms.getMatrix());
-            }
-            catch ( Exception e)
-            {
-                e.printStackTrace();
-            }
+//            int[][] testMe = runSingle(ms.getStringA(), ms.getStringB());
+//            isMatrixSame(testMe, ms.getMatrix());
+//            try
+//            {
+//                printToFile("parallel2.txt", ms.getMatrix());
+//            }
+//            catch ( Exception e)
+//            {
+//                e.printStackTrace();
+//            }
         }
     }
 
@@ -274,7 +274,7 @@ public class Cell2 extends Thread
         /* timer thingy */
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
-        System.out.println("Time: " + totalTime);
+        System.out.println("SingleRun: Time: " + totalTime);
 //        matrix1 = matrix;
 //        printMatrix(matrix);
         try {
