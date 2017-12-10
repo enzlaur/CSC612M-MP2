@@ -1,6 +1,7 @@
 package Parallel;
 
 import Utility.IOMaster;
+import standard.StandardMatrixFiller;
 
 import static Utility.Print.*;
 
@@ -235,9 +236,10 @@ public class Cell2 extends Thread
             System.out.println("Time: " + totalTime);
             println("Finished all " + ms.getFinishedThreads() + " thread(s) ");
 //            printMatrix( ms.getMatrix() );
+            int[][] testMe = runSingle(ms.getStringA(), ms.getStringB());
+            isMatrixSame(testMe, ms.getMatrix());
             try
             {
-
                 printToFile("parallel2.txt", ms.getMatrix());
             }
             catch ( Exception e)
@@ -245,6 +247,47 @@ public class Cell2 extends Thread
                 e.printStackTrace();
             }
         }
+    }
+
+
+    public static boolean isMatrixSame(int[][] matrix1, int[][] matrix2) {
+        for (int i = 1; i < matrix1.length; i++) {  // starts with 1 because row 1 is all 0
+            for (int j = 1; j < matrix1[i].length; j++) { // starts with 1 because column 1 is all 0
+                if(matrix1[i][j] != matrix2[i][j]){
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+    public static int[][] runSingle(String stringA, String stringB)
+    {
+        StandardMatrixFiller standardMatrixFiller = new StandardMatrixFiller();
+        /*
+         * Single version
+         * */
+        /* Populate matrix */
+        long startTime = System.currentTimeMillis(); /* time thingy */
+        int[][] matrix = standardMatrixFiller.fillMatrix(stringA, stringB);
+
+        /* timer thingy */
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println("Time: " + totalTime);
+//        matrix1 = matrix;
+//        printMatrix(matrix);
+        try {
+            printToFile("single.txt", matrix);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return matrix;
+    }
+
+    public MatrixStorage getMs() {
+        return ms;
     }
 }
 

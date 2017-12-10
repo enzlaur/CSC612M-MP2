@@ -1,3 +1,4 @@
+import Parallel.MatrixStorage;
 import Parallel.Matrixer;
 import Parallel.Matrixer2;
 import Utility.IOMaster;
@@ -7,9 +8,12 @@ import standard.StandardMatrixFiller;
 import java.util.Arrays;
 
 import static Utility.Print.printMatrix;
+import static Utility.Print.println;
 
 public class Main {
 
+    private static int[][] matrix1;
+    private static int[][] matrix2;
 
     public static int[][] runSingle(String stringA, String stringB)
     {
@@ -20,10 +24,12 @@ public class Main {
         /* Populate matrix */
         long startTime = System.currentTimeMillis(); /* time thingy */
         int[][] matrix = standardMatrixFiller.fillMatrix(stringA, stringB);
+
         /* timer thingy */
         long endTime   = System.currentTimeMillis();
         long totalTime = endTime - startTime;
         System.out.println("Time: " + totalTime);
+        matrix1 = matrix;
 //        printMatrix(matrix);
         try {
             printToFile("single.txt", matrix);
@@ -43,7 +49,8 @@ public class Main {
 
     public static void runParallel2(String stringA, String stringB)
     {
-        Matrixer2 m2 = new Matrixer2(stringA, stringB);
+        MatrixStorage ms = new MatrixStorage(stringA, stringB);
+        Matrixer2 m2 = new Matrixer2(ms);
         m2.runMatrixer2();
 //        try
 //        {
@@ -53,7 +60,7 @@ public class Main {
 //        {
 //            e.printStackTrace();
 //        }
-
+        matrix2 = m2.getMs().getMatrix();
     }
 
     public static void runParallel(String stringA, String stringB)
@@ -112,13 +119,15 @@ public class Main {
 //        runSingle(stringA, stringB);
 //        runSingle(stringA, stringB);
 //        runSingle(stringA, stringB);
-//        runSingle(stringA, stringB);
+        runSingle(stringA, stringB);
         runParallel2(stringA, stringB);
 //        runParallel2(stringA, stringB);
 //        runParallel2(stringA, stringB);
 //        runParallel2(stringA, stringB);
 //        runParallel3(stringA, stringB);
-
+//        printMatrix( matrix2 );
+        /* print at cell */
+//        println("Check if match: " + isMatrixSame(matrix1,matrix2));
         /*
         * Perform Traceback below
         * */

@@ -98,4 +98,11 @@ public class MatrixStorage
         this.finishedThreads = 0;
     }
 
+    public String getStringA() {
+        return stringA;
+    }
+
+    public String getStringB() {
+        return stringB;
+    }
 }

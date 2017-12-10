@@ -13,6 +13,10 @@ public class Matrixer2
         this.stringB = stringB;
     }
 
+    public Matrixer2(MatrixStorage ms) {
+        this.ms = ms;
+    }
+
     public void manualLoop(MatrixStorage ms)
     {
 
@@ -53,12 +57,12 @@ public class Matrixer2
 
     public void runMatrixer2()
     {
-        MatrixStorage matrixStorage = new MatrixStorage(stringA, stringB);
-        Cell2 c1 = new Cell2(matrixStorage, 1,0, matrixStorage.getStringALen(),matrixStorage.getStringBLen());
-        Cell2 c2 = new Cell2(matrixStorage, 0, 1, matrixStorage.getStringALen(), matrixStorage.getStringBLen());
+//        MatrixStorage matrixStorage = new MatrixStorage(stringA, stringB);
+//        this.ms = matrixStorage;
+        Cell2 c1 = new Cell2(ms, 1,0, ms.getStringALen(),ms.getStringBLen());
+        Cell2 c2 = new Cell2(ms, 0, 1, ms.getStringALen(), ms.getStringBLen());
         c2.start(); /* upright triangle*/
         c1.start(); /* downward triangle*/
-        this.ms = matrixStorage;
 //        printMatrix( matrixStorage.getMatrix() );
     }
 
