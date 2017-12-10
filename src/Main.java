@@ -129,5 +129,32 @@ public class Main {
 //        magicalTraceback.generateAlignments(stringA, stringB);
     }
 
+    public static boolean isMatrixSame(int[][] matrix1, int[][] matrix2) {
+        for (int i = 1; i < matrix1.length; i++) {  // starts with 1 because row 1 is all 0
+            for (int j = 1; j < matrix1[i].length; j++) { // starts with 1 because column 1 is all 0
+                if(matrix1[i][j] != matrix2[i][j]){
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+    public static class checker
+    {
+        public static boolean isMatrixSame(int[][] matrix1, int[][] matrix2) {
+            for (int i = 1; i < matrix1.length; i++) {  // starts with 1 because row 1 is all 0
+                for (int j = 1; j < matrix1[i].length; j++) { // starts with 1 because column 1 is all 0
+                    if(matrix1[i][j] != matrix2[i][j]){
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+    }
+
+
 
 }
