@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eadf45d8-4813-40c2-b081-de688dcfb13c" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/parallel2.txt" afterPath="$PROJECT_DIR$/parallel2.txt" />
-      <change beforePath="$PROJECT_DIR$/sequences.txt" afterPath="$PROJECT_DIR$/sequences.txt" />
-      <change beforePath="$PROJECT_DIR$/single.txt" afterPath="$PROJECT_DIR$/single.txt" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change beforePath="$PROJECT_DIR$/src/Parallel/Cell2.java" afterPath="$PROJECT_DIR$/src/Parallel/Cell2.java" />
+      <change beforePath="$PROJECT_DIR$/src/Parallel/Matrixer2.java" afterPath="$PROJECT_DIR$/src/Parallel/Matrixer2.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,11 +24,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.4313099">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Main.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="794">
-                  <caret line="116" column="38" lean-forward="true" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="38" />
+                <state relative-caret-position="-780">
+                  <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -75,11 +73,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Matrixer2.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Matrixer2.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Parallel/Matrixer2.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="592">
-                  <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
+                <state relative-caret-position="444">
+                  <caret line="70" column="46" lean-forward="true" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
                   <folding>
                     <element signature="e#2007#2008#0" expanded="true" />
                     <element signature="e#2032#2033#0" expanded="true" />
@@ -95,8 +93,8 @@
           <file leaf-file-name="Cell2.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Parallel/Cell2.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="207" column="21" lean-forward="true" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+                <state relative-caret-position="528">
+                  <caret line="208" column="17" lean-forward="true" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
                   <folding>
                     <element signature="e#836#837#0" expanded="true" />
                     <element signature="e#864#865#0" expanded="true" />
@@ -200,9 +198,9 @@
         <option value="$PROJECT_DIR$/src/Parallel/Matrixer.java" />
         <option value="$PROJECT_DIR$/src/Utility/IOMaster.java" />
         <option value="$PROJECT_DIR$/src/Parallel/MatrixStorage.java" />
-        <option value="$PROJECT_DIR$/src/Parallel/Matrixer2.java" />
-        <option value="$PROJECT_DIR$/src/Parallel/Cell2.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Parallel/Cell2.java" />
+        <option value="$PROJECT_DIR$/src/Parallel/Matrixer2.java" />
       </list>
     </option>
   </component>
@@ -481,12 +479,12 @@
       <workItem from="1512830612318" duration="1307000" />
       <workItem from="1512832005543" duration="183000" />
       <workItem from="1512832244601" duration="31498000" />
-      <workItem from="1512874352899" duration="824000" />
+      <workItem from="1512874352899" duration="1530000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69033000" />
+    <option name="totallyTimeSpent" value="69739000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1078,6 +1076,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-780">
+          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parallel/MatrixStorage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1113,34 +1121,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parallel/Matrixer2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="592">
-          <caret line="57" column="12" lean-forward="false" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
-          <folding>
-            <element signature="e#2007#2008#0" expanded="true" />
-            <element signature="e#2032#2033#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="794">
-          <caret line="116" column="38" lean-forward="true" selection-start-line="116" selection-start-column="38" selection-end-line="116" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Parallel/Cell2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="207" column="21" lean-forward="true" selection-start-line="207" selection-start-column="21" selection-end-line="207" selection-end-column="21" />
+        <state relative-caret-position="528">
+          <caret line="208" column="17" lean-forward="true" selection-start-line="208" selection-start-column="17" selection-end-line="208" selection-end-column="17" />
           <folding>
             <element signature="e#836#837#0" expanded="true" />
             <element signature="e#864#865#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parallel/Matrixer2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="70" column="46" lean-forward="true" selection-start-line="70" selection-start-column="46" selection-end-line="70" selection-end-column="46" />
+          <folding>
+            <element signature="e#2007#2008#0" expanded="true" />
+            <element signature="e#2032#2033#0" expanded="true" />
           </folding>
         </state>
       </provider>

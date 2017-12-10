@@ -222,7 +222,7 @@ public class Cell2 extends Thread
             long totalTime = endTime - startTime;
             System.out.println("Time: " + totalTime);
             println("Finished all " + ms.getFinishedThreads() + " thread(s) ");
-//            printMatrix( ms.getMatrix() );
+            printMatrix( ms.getMatrix() );
         }
     }
 }

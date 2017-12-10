@@ -55,7 +55,7 @@ public class Matrixer2
     {
         MatrixStorage matrixStorage = new MatrixStorage(stringA, stringB);
         Cell2 c1 = new Cell2(matrixStorage, 1,0, matrixStorage.getStringALen(),matrixStorage.getStringBLen());
-        Cell2 c2 = new Cell2(matrixStorage, 0, 2, matrixStorage.getStringALen(), matrixStorage.getStringBLen());
+        Cell2 c2 = new Cell2(matrixStorage, 0, 1, matrixStorage.getStringALen(), matrixStorage.getStringBLen());
         c2.start(); /* upright triangle*/
         c1.start(); /* downward triangle*/
         this.ms = matrixStorage;
