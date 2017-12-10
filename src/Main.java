@@ -109,7 +109,7 @@ public class Main {
         runParallel2(stringA, stringB);
         runParallel2(stringA, stringB);
         runParallel2(stringA, stringB);
-        runParallel2(stringA, stringB);
+//        runParallel2(stringA, stringB);
 
         /*
         * Perform Traceback below

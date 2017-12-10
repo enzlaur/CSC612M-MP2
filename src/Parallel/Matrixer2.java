@@ -13,7 +13,43 @@ public class Matrixer2
         this.stringB = stringB;
     }
 
+    public void manualLoop(MatrixStorage ms)
+    {
 
+    }
+
+    public void runMatrixer2B()
+    {
+        MatrixStorage ms = new MatrixStorage(stringA, stringB);
+        Cell2 c1, c2;
+        int i = 1, j = 1;
+
+        while( i <= ms.getStringALen() )
+        {
+            println(ms.getFinishedThreads());
+            while( ms.getFinishedThreads() < 2)
+            {
+                println("ft: " + ms.getFinishedThreads());
+
+            }
+            ms.resetFinishedThreads();
+//            println("FS: " + ms.getFinishedThreads());
+            c1 = new Cell2("1", ms, i, ms.getStringALen(), 'r');
+            c2 = new Cell2("2", ms, i, ms.getStringBLen(), 'd');
+            i++;
+
+            c1.start();
+            c2.start();
+
+
+
+
+            println("FT NOW: " + ms.getFinishedThreads());
+        }
+        println("finishedThreads: " + ms.getFinishedThreads());
+        println("m2b finished");
+        printMatrix(ms.getMatrix());
+    }
 
     public void runMatrixer2()
     {
@@ -38,7 +74,7 @@ public class Matrixer2
             String stringB = "TGTTACGG";
             Matrixer2 matrixer2 = new Matrixer2(stringA, stringB);
 
-            matrixer2.runMatrixer2();
+            matrixer2.runMatrixer2B();
         }
     }
 }

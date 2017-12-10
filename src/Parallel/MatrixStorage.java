@@ -10,7 +10,9 @@ public class MatrixStorage
     private int[][] matrix;
     private String stringA, stringB;
     private int stringALen, stringBLen;
-    private int finishedThreads = 0;
+    private int finishedThreads = 2;
+    private int offsetX = 1;
+    private int offsetY = 1;
 
     public MatrixStorage(String stringA, String stringB)
     {
@@ -56,7 +58,7 @@ public class MatrixStorage
         return matrix;
     }
 
-    public void incrementFinishedThreads()
+    public synchronized void incrementFinishedThreads()
     {
         this.finishedThreads++;
     }
@@ -64,4 +66,36 @@ public class MatrixStorage
     public int getFinishedThreads() {
         return finishedThreads;
     }
+
+    public int getOffsetX() {
+        return offsetX;
+    }
+
+    public void setOffsetX(int offsetX) {
+        this.offsetX = offsetX;
+    }
+
+    public int getOffsetY() {
+        return offsetY;
+    }
+
+    public void setOffsetY(int offsetY) {
+        this.offsetY = offsetY;
+    }
+
+    public void incrementOffsetX()
+    {
+        this.offsetX++;
+    }
+
+    public void incrementOffsetY()
+    {
+        this.offsetY++;
+    }
+
+    public void resetFinishedThreads()
+    {
+        this.finishedThreads = 0;
+    }
+
 }

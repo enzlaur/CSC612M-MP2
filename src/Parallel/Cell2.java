@@ -10,10 +10,13 @@ public class Cell2 extends Thread
     int startX = 1, startY = 1;
     int endX, endY;
     int offset = 1;
+    char direction;
     /* Constant variables */
     private final int matchScore = 3;
     private final int mismatchScore = -3;
     private final int gapPenalty = -2;
+
+
 
     public Cell2(MatrixStorage matrixStorage, int start, int end)
     {
@@ -34,6 +37,15 @@ public class Cell2 extends Thread
     public Cell2(MatrixStorage ms)
     {
         this.ms = ms;
+    }
+
+    public Cell2(String name, MatrixStorage ms, int start, int end, char direction)
+    {
+        super(name);
+        this.ms = ms;
+        this.start = start;
+        this.end = end;
+        this.direction = direction;
     }
 
     public int computeCellScore(int x, int y)
@@ -71,7 +83,101 @@ public class Cell2 extends Thread
         return score;
     }
 
+    public void run3()
+    {
+        try
+        {
+
+        }
+        catch ( Exception e )
+        {
+            e.printStackTrace();
+        }
+    }
+
+    /* second version boi */
     public void run()
+    {
+        long startTime = System.currentTimeMillis();
+        int tempVal;
+        try
+        {
+
+            if( ms.getFinishedThreads() == 2) {
+                currentThread().interrupt();
+                println("interrupted");
+            }
+            if( direction == 'r' )
+            {
+//                println("r ran");
+                for( int i = start; i <= ms.getStringALen(); i++ )
+                {
+                    tempVal = computeCellScore(i, ms.getOffsetY());
+                    ms.updateMatrixTableCellValue(i, ms.getOffsetY(), tempVal);
+
+                }
+//                ms.incrementOffsetY();
+            }
+            else
+            {
+//                println("d ran");
+                for( int i = start; i <= ms.getStringBLen(); i++ )
+                {
+                    tempVal = computeCellScore(ms.getOffsetX(), i);
+                    ms.updateMatrixTableCellValue(ms.getOffsetX(), i, tempVal);
+                }
+            }
+/*
+            for( int i = start; i <= end; i++ )
+            {
+                if( this.direction == 'r')
+                {
+                    tempVal = computeCellScore(i, ms.getOffsetY());
+                    ms.updateMatrixTableCellValue(i, ms.getOffsetY(), tempVal);
+                    ms.incrementOffsetY();
+                }
+                else
+                {
+                    tempVal = computeCellScore(ms.getOffsetX(), i);
+                    ms.updateMatrixTableCellValue(ms.getOffsetX(), i, tempVal);
+                    ms.incrementOffsetX();
+                }
+            }*/
+            if(ms.getOffsetY() < ms.getStringBLen() && direction == 'r')
+            {
+//                println("y adds");
+                ms.incrementOffsetY();
+                ms.incrementFinishedThreads();
+                if(ms.getFinishedThreads() == 2)
+                {
+                    println("shit1");
+                    currentThread().interrupt();
+                }
+            }
+            if(ms.getOffsetX() < ms.getStringALen() && direction != 'r' )
+            {
+//                println("x adds");
+                ms.incrementOffsetX();
+                ms.incrementFinishedThreads();
+                if(ms.getFinishedThreads() == 2)
+                {
+                    println("shit2");
+                    currentThread().interrupt();
+
+                }
+            }
+
+
+        }
+        catch ( Exception e )
+        {
+            e.printStackTrace();
+        }
+//        printMatrix(ms.getMatrix());
+        println("increment by the cell: " + ms.getFinishedThreads());
+    }
+
+    public void run2()
     {
         long startTime = System.currentTimeMillis();
         int tempVal;
@@ -111,7 +217,7 @@ public class Cell2 extends Thread
             long totalTime = endTime - startTime;
             System.out.println("Time: " + totalTime);
             println("Finished all " + ms.getFinishedThreads() + " thread(s) ");
-//            printMatrix( ms.getMatrix() );
+            printMatrix( ms.getMatrix() );
         }
     }
 }
