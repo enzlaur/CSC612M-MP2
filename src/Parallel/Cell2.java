@@ -236,6 +236,7 @@ public class Cell2 extends Thread
             System.out.println("ParallelRun: Time: " + totalTime);
             println("Finished all " + ms.getFinishedThreads() + " thread(s) ");
 //            printMatrix( ms.getMatrix() );
+
 //            int[][] testMe = runSingle(ms.getStringA(), ms.getStringB());
 //            isMatrixSame(testMe, ms.getMatrix());
 //            try
