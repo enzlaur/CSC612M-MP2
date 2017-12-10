@@ -38,11 +38,11 @@ public class Matrixer2
             c2.start();
 //            println("FT NOW: " + ms.getFinishedThreads());
         }
-//        while( ms.getFinishedThreads() < ( (ms.getStringALen()-1) + (ms.getStringBLen()-1) ) )
-//        {
-//            print("ft: " + ms.getFinishedThreads());
-////            int sbs = ms.getFinishedThreads()+1;
-//        }
+        while( ms.getFinishedThreads() < ( (ms.getStringALen()-1) + (ms.getStringBLen()-1) ) )
+        {
+            print("ft: " + ms.getFinishedThreads());
+//            int sbs = ms.getFinishedThreads()+1;
+        }
         println("finishedThreads: " + ms.getFinishedThreads());
         println("m2b finished");
         long endTime   = System.currentTimeMillis();
