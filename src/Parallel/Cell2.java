@@ -96,17 +96,18 @@ public class Cell2 extends Thread
     }
 
     /* second version boi */
-    public void run()
+    public void run2()
     {
         long startTime = System.currentTimeMillis();
         int tempVal;
         try
         {
 
-            if( ms.getFinishedThreads() == 2) {
-                currentThread().interrupt();
-                println("interrupted");
-            }
+//            if( ms.getFinishedThreads() == 2) {
+//                currentThread().interrupt();
+//                println("interrupted");
+//                return;
+//            }
             if( direction == 'r' )
             {
 //                println("r ran");
@@ -148,23 +149,27 @@ public class Cell2 extends Thread
 //                println("y adds");
                 ms.incrementOffsetY();
                 ms.incrementFinishedThreads();
-                if(ms.getFinishedThreads() == 2)
-                {
-                    println("shit1");
-                    currentThread().interrupt();
-                }
+//                if(ms.getFinishedThreads() == 2)
+//                {
+//                    println("shit1");
+//                    this.interrupt();
+//                    currentThread().interrupt();
+//                    return;
+//
+//                }
             }
             if(ms.getOffsetX() < ms.getStringALen() && direction != 'r' )
             {
 //                println("x adds");
                 ms.incrementOffsetX();
                 ms.incrementFinishedThreads();
-                if(ms.getFinishedThreads() == 2)
-                {
-                    println("shit2");
-                    currentThread().interrupt();
-
-                }
+//                if(ms.getFinishedThreads() == 2)
+//                {
+//                    println("shit2");
+//                    this.interrupt();
+//                    currentThread().interrupt();
+//                    return;
+//                }
             }
 
 
@@ -174,10 +179,10 @@ public class Cell2 extends Thread
             e.printStackTrace();
         }
 //        printMatrix(ms.getMatrix());
-        println("increment by the cell: " + ms.getFinishedThreads());
+//        println("increment by the cell: " + ms.getFinishedThreads());
     }
 
-    public void run2()
+    public void run()
     {
         long startTime = System.currentTimeMillis();
         int tempVal;

@@ -10,7 +10,7 @@ public class MatrixStorage
     private int[][] matrix;
     private String stringA, stringB;
     private int stringALen, stringBLen;
-    private int finishedThreads = 2;
+    private int finishedThreads = 0;
     private int offsetX = 1;
     private int offsetY = 1;
 

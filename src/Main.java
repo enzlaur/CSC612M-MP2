@@ -34,6 +34,13 @@ public class Main {
         return matrix;
     }
 
+    public static void runParallel3(String stringA, String stringB)
+    {
+        Matrixer2 m2 = new Matrixer2(stringA, stringB);
+        m2.runMatrixer2B();
+
+    }
+
     public static void runParallel2(String stringA, String stringB)
     {
         Matrixer2 m2 = new Matrixer2(stringA, stringB);
@@ -106,10 +113,11 @@ public class Main {
 //        runSingle(stringA, stringB);
 //        runSingle(stringA, stringB);
 //        runSingle(stringA, stringB);
-        runParallel2(stringA, stringB);
-        runParallel2(stringA, stringB);
-        runParallel2(stringA, stringB);
 //        runParallel2(stringA, stringB);
+//        runParallel2(stringA, stringB);
+//        runParallel2(stringA, stringB);
+        runParallel2(stringA, stringB);
+//        runParallel3(stringA, stringB);
 
         /*
         * Perform Traceback below

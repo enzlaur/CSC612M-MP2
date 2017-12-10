@@ -20,19 +20,15 @@ public class Matrixer2
 
     public void runMatrixer2B()
     {
+        long startTime = System.currentTimeMillis();
         MatrixStorage ms = new MatrixStorage(stringA, stringB);
         Cell2 c1, c2;
         int i = 1, j = 1;
 
         while( i <= ms.getStringALen() )
         {
-            println(ms.getFinishedThreads());
-            while( ms.getFinishedThreads() < 2)
-            {
-                println("ft: " + ms.getFinishedThreads());
+//            println(ms.getFinishedThreads());
 
-            }
-            ms.resetFinishedThreads();
 //            println("FS: " + ms.getFinishedThreads());
             c1 = new Cell2("1", ms, i, ms.getStringALen(), 'r');
             c2 = new Cell2("2", ms, i, ms.getStringBLen(), 'd');
@@ -40,14 +36,18 @@ public class Matrixer2
 
             c1.start();
             c2.start();
-
-
-
-
-            println("FT NOW: " + ms.getFinishedThreads());
+//            println("FT NOW: " + ms.getFinishedThreads());
         }
+//        while( ms.getFinishedThreads() < ( (ms.getStringALen()-1) + (ms.getStringBLen()-1) ) )
+//        {
+//            print("ft: " + ms.getFinishedThreads());
+////            int sbs = ms.getFinishedThreads()+1;
+//        }
         println("finishedThreads: " + ms.getFinishedThreads());
         println("m2b finished");
+        long endTime   = System.currentTimeMillis();
+        long totalTime = endTime - startTime;
+        System.out.println("Time: " + totalTime);
         printMatrix(ms.getMatrix());
     }
 
